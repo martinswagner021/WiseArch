@@ -1,0 +1,58 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        'header'
+        'content'
+        'content'
+        'content'
+        'content'
+        'content';
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-image: url('./Landing-pages-wisearch-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        'header-left links links';
+}
+.header-left{
+    grid-area: header-left;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.header-left img{
+    width: 100px;
+    height: 100px;
+}
+.header ul{
+    grid-area: links;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.content{
+    grid-area: content;
+}
+
+
