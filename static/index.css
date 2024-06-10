@@ -1,7 +1,23 @@
+/*
+    Usei o @font-face pra setar as fontes:
+    se chamar font-family: magistral-bold
+    vai carregar a versão bold. 
+
+    fiz assim porquê mexer com as variacoes é mais complicado
+*/
+@font-face {
+    font-family: 'magistral';
+    src: url('./Fonts/Magistral-Medium.ttf') format('truetype');
+} 
+
 *{
     padding: 0px;
     margin: 0px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'magistral';
 }
+
 body{
     display: grid;
     height: 100vh;
@@ -32,16 +48,24 @@ body::before{
     display: grid;
     grid-template-areas:
         'header-left links links';
+    color: whitesmoke;
+    font-size: 30px;
 }
+
 .header-left{
     grid-area: header-left;
     display: flex;
     justify-content: start;
     align-items: center;
+    font-size: 20px;
+    margin-left: 55px;
 }
 .header-left img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    /*A imagem ta preta em si, inverti a cor pra poder ficar branco (stonks)*/
+    filter: invert(1);
+    margin-right: 33px;
 }
 .header ul{
     grid-area: links;
@@ -49,10 +73,137 @@ body::before{
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    max-width: 90%;
+
 }
 
 .content{
     grid-area: content;
+    text-align: start;
+    margin-left: 7%; 
+    margin-top: 130px;
+    max-width: 45%;
+}
+
+.content h1{
+    font-size: 120px;
+    margin-left: 15px;
+}
+
+.content p{
+    font-size: 25px; 
+    margin-bottom: 290px;
+}
+
+.about-us{
+    background-image: url(./BACKGROUND.jpg);
+    width: 100%;
+    /*
+    Nao sei o que aconteceu com o background original
+    dai eu só ampliei esse aqui MUITO pra nao parar o servico
+    */
+    height: 1232133px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px ;
+    margin-top: 30px;
+    box-shadow: 0px -12px 3px rgba(0, 0, 0, 0.2);
+}
+
+.about-us h1{
+    padding: 20px;
+    margin-left: 2%;
+    margin-top: 0.7%;
+    text-shadow: 1.3px 1.3px 1.3px black;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    max-width: 65px;
+    position: absolute;
+    right: 20px;
+    top: 15vh;
+}
+
+.icons a{
+    display: flex;
+    flex-direction: column;
+    max-width: 65px;
+    max-height: 65px;
+    right: 20px;
+    top: 30vh;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 
+/*ok porque isso aqui nao ta funcionando?*/
+/*isso aqui são aqueles retangulos entre os icones do wpp e do instagram*/
+.linha{
+    width: 1.5px; 
+    height: 150px; 
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 28px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.about-us .topico-1{
+    width: 10px;
+    height: 65px;
+    background-color: #6e0d25;
+    margin-left: 10px;
+    margin-right: 25px;
+    border-radius: 10px;
+}
+
+.text-description{
+    max-width: 80%;
+    max-height: 300px;
+    padding: 20px;
+    margin-left: 6%;
+    font-size: 25px;
+    text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+.red{
+    color: #6e0d25;
+    text-shadow: none;
+}
+
+.icons-about{
+    display: flex;
+    flex-direction: column;
+    max-width: 65px;
+    position: absolute;
+    right: 44px;
+    top: 100vh;
+}
+
+.icons-about img{
+    max-height: 200px;
+}
+
+.icons-about .linha{
+    width: 2px; 
+    height: 230px; 
+    background-color: #6e0d25;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.img-services{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images{
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 80px;
+}
