@@ -1,14 +1,8 @@
-/*
-    Usei o @font-face pra setar as fontes:
-    se chamar font-family: magistral-bold
-    vai carregar a versão bold. 
+@import url('./fonts/Magistral-Medium.ttf');
 
-    fiz assim porquê mexer com as variacoes é mais complicado
-*/
-@font-face {
-    font-family: 'magistral';
-    src: url('./Fonts/Magistral-Medium.ttf') format('truetype');
-} 
+html{
+    scroll-behavior: smooth;
+}
 
 *{
     padding: 0px;
@@ -18,16 +12,16 @@
     font-family: 'magistral';
 }
 
+a:hover{
+    transition: transform .5s ease;
+    transition: font-weight .5s ease;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
 body{
-    display: grid;
-    height: 100vh;
-    grid-template-areas:
-        'header'
-        'content'
-        'content'
-        'content'
-        'content'
-        'content';
+    display: flex;
+    flex-direction: column;
 }
 
 body::before{
@@ -38,20 +32,22 @@ body::before{
     z-index: -1;
     width: 100%;
     height: 100vh;
-    background-image: url('./Landing-pages-wisearch-2.jpg');
+    background-image: url('./background-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 .header{
-    grid-area: header;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
     display: grid;
     grid-template-areas:
         'header-left links links';
     color: whitesmoke;
     font-size: 30px;
 }
-
 .header-left{
     grid-area: header-left;
     display: flex;
@@ -63,26 +59,39 @@ body::before{
 .header-left img{
     width: 120px;
     height: 120px;
-    /*A imagem ta preta em si, inverti a cor pra poder ficar branco (stonks)*/
     filter: invert(1);
     margin-right: 33px;
 }
 .header ul{
     grid-area: links;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
     max-width: 90%;
 
 }
 
+.section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .content{
-    grid-area: content;
     text-align: start;
     margin-left: 7%; 
-    margin-top: 130px;
     max-width: 45%;
+}
+    
+.hidden{
+    opacity: 0;
+}
+
+.show{
+    transition: opacity 1.5s ease;
+    opacity: 1;
 }
 
 .content h1{
@@ -92,20 +101,20 @@ body::before{
 
 .content p{
     font-size: 25px; 
-    margin-bottom: 290px;
 }
 
 .about-us{
-    background-image: url(./BACKGROUND.jpg);
+    background-image: url(./background-about-us.jpg);
+    padding-top: 120px;
     width: 100%;
     /*
     Nao sei o que aconteceu com o background original
     dai eu só ampliei esse aqui MUITO pra nao parar o servico
     */
-    height: 1232133px;
+    height: 100vh;
+    z-index: -1;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px ;
-    margin-top: 30px;
     box-shadow: 0px -12px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -123,9 +132,7 @@ body::before{
     display: flex;
     flex-direction: column;
     max-width: 65px;
-    position: absolute;
-    right: 20px;
-    top: 15vh;
+    margin-right: 20px;
 }
 
 .icons a{
@@ -138,7 +145,6 @@ body::before{
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 
 /*ok porque isso aqui nao ta funcionando?*/
 /*isso aqui são aqueles retangulos entre os icones do wpp e do instagram*/
@@ -206,4 +212,8 @@ body::before{
     max-width: 200px;
     max-height: 200px;
     margin-right: 80px;
+}
+
+@media only screen and (max-width: 480px) {
+
 }
