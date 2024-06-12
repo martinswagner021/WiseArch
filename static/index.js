@@ -13,8 +13,9 @@ document.querySelectorAll('.hidden').forEach((el) => {
 })
 
 window.addEventListener('scroll', function() {
-    var header = document.getElementById('header');
-    if (window.scrollY > 50) {
+    const header = document.getElementById('header');
+    const mainTextHeight = this.document.getElementById('wisearch').scrollHeight
+    if (window.scrollY > mainTextHeight) {
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
