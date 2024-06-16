@@ -25,7 +25,7 @@ window.addEventListener('scroll', function() {
 const btn = document.getElementById("menu-mobile")
 
 btn.addEventListener('click', function(){
-    const header = document.getElementById('header');
-    header.classList.toggle('active');
+    const droptool = document.getElementById('droptool');
+    droptool.classList.toggle('active');
 });
 
