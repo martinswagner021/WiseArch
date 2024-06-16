@@ -3,15 +3,27 @@
     <head>
         <title>WiseArch</title>
         <link rel="stylesheet" href="./static/index.css">
+        <link rel="stylesheet" href="./static/hamburguer.css">
         <link rel="icon" href="./static/wisearch-logo-vetorizado-vinho.svg"/>
-        <meta name="viewport" content="width=device-width, initial-scale=2.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body>
         <div class="header" id="header">
-            <div class="header-left">
-                <img src="./static/wisearch-logo-vetorizado.svg">
-                <h1>WiseArch</h1>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./static/wisearch-logo-vetorizado.svg" id="logo-header">
+                </div>
+                <div class="text">
+                    <h1>WiseArch</h1>
+                </div>
+                <button class="hamburger hamburger--3dy" id="menu-mobile" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                </button>
             </div>
+        </div>
+        <div class="droptool" id="droptool">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about-us">Sobre nós</a></li>
@@ -23,16 +35,17 @@
                 <h1 id="wisearch" class="typewriter">WiseArch</h1>
                 <p>
                     Somos uma microempresa de tecnologia para o seu negócio.
+                    
                     Oferecemos soluções digitais para o crescimento do seu empreendimento com preços justos e entregas de alta qualidade.
                     Temos o objetivo de prestar serviços de excelência com alto nível de performance.
                 </p>
             </div>
-            <div class="icons hidden">
+<!--             <div class="icons hidden">
                 <div class="linha"></div>
                 <a target="_blank" href="https://wa.me/5522997823178"><img src="./static/icons/icon whatapp.png" alt="whatapp icon"></a>
                 <a target="_blank" href="https://www.instagram.com/wisearch.io/"><img src="./static/icons/icon instagram.png" alt="instagram icon"></a>
                 <div class="linha"></div>
-            </div>
+            </div> -->
         </div>
         <div class="section">
             <div class="about-us" id="about-us">
@@ -67,9 +80,6 @@
                             <h3>Social Media</h3>
                             <p>Criação de logo, Branding, Posts, Videos</p>
                         </div>
-                        <!-- <img class="images" src="./static/img-services/sistemas.png" alt="">
-                        <img class="images" src="./static/img-services/sites.png" alt="">
-                        <img class="images" src="./static/img-services/social-media.png" alt=""> -->
                     </div>
                     <h1 class="hidden"><div class="topico-1"></div>Missão</h1>
                     <div class="text-description hidden">
@@ -79,11 +89,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="icons-about">
+               <!--  <div class="icons-about">
                     <div class="linha"></div>
                     <img src="/static/wisearch-texto-vertical.png" alt="">
                     <div class="linha"></div>
-                </div>
+                </div> -->
             </div> 
         </div>
         <div class="container">
