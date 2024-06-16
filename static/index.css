@@ -1,318 +1,67 @@
-@font-face {
-    font-family: 'magistral';
-    src: url('./fonts/Magistral-Medium.ttf');
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-*{
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
-    color: whitesmoke;
-    font-family: 'magistral';
-}
-
-
-@media only screen and (max-width: 767px) {
-
-
-body{
-    display: flex;
-    flex-direction: column;
-    font-family: 'magistral';
-    color: white;
-    font-size: 0.625rem;
-}
-
-body::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-image: url('./background-home.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Parte do Header */
-
-.header{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    display: grid;
-    grid-template-areas:
-        'header-left links links';
-    color: whitesmoke;
-    transition: background-color .5s ease;
-    justify-content: space-between;
-}
-
-.header h1{
-    font-size: 30px;
-    padding: 0.625rem;
-    margin-left: 2.1875rem;
-}
-
-/* Transicao */
-.header-scrolled{
-    background-color: #6e0d25;
-}
-
-.header-left{
-    grid-area: header-left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-left img{
-    width: 3.125rem;
-    height: 3.125rem;
-    filter: invert(1);
-    padding: 1.25rem;
-}
-
-/* Responsavel por esconder a lista */
-.header ul {
-    display: none;
-}
-
-.droptool {
-    display: none;
-}
-
-.droptool.active {
-    position: fixed;
-    font-family: 'magistral';
-    color: whitesmoke;
-    display: flex;
-
-    top: 70px;
-    width: 100%;
-
-    align-items: center;
-    background-image: url("./background-about-us.jpg");
-
-}
-
-.droptool.active a{
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 0.625rem;
-}
-
-.droptool.active ul {
-    grid-area: links;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    max-width: 90%;
-}
-
-
-#menu-mobile{
-    font-family: 'magistral';
-    color: aliceblue;
-    border-radius: 10%;
-    margin-top: 0.9375rem;
-
-    /* tamanho  */
-    width: 50px;
-    height: 50px;
+@media (max-width: 767px) {
     
-    background: rgba( 110, 13, 37, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.6 );
-    -webkit-backdrop-filter: blur( 8px );
+    @font-face {
+        font-family: 'magistral';
+        src: url("./fonts/Magistral-Medium.ttf");
+    }
 
-    /* pra aparecer */
-    display: block;
-}
+    body {
+        font-family: 'magistral';
+        background-image: url("./background-home.jpg");
+        color: white;
+        font-size: 15px;
+        background-size:800px;
+        background-position-x: 80%;
+        background-position-y: 0px;
+        background-repeat: no-repeat;
+    }
 
-.section{
-        display: flex;
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .header{
+        position: sticky;
+        top: 0;
         align-items: center;
+        transition: background-color .5s ease;
+    }
+    
+    .header-content{
+        display: flex;
         justify-content: space-between;
-}
+        align-items: center;
+        padding: 20px;
+        background-color: transparent;
+    }
+
+    .header-scrolled{
+        background-color: #6e0d25;
+    }
     
+    #logo-header{
+        width: 50px;
+        height: 50px;
+        filter: invert(1);
+    }
 
-.content{
-    margin-left: 7%;
-    padding-top: 5rem;
-    padding-bottom: 1.25rem;
-}
+    .section{
+        padding: 10px;
+        margin-top: 100px;
+    }
 
-.hidden{
-    opacity: 0;
-}
+    .droptool {
+        display: none;
+    }
 
-.show{
-    transition: opacity 1.5s ease;
-    opacity: 1;
-}
+    .droptool.active{
+        display: block;
+        padding: 10px;
+    }
 
-.content h1{
-    font-size: 2.5rem;
-    margin-left: 0.125rem;
-}
-
-.content p{
-    font-size: 15px; 
-    width: 90%;
-}
-
-/* Parte do about us */
-
-.about-us{
-    background-image: url(./background-about-us.jpg);
-    z-index: -1;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px ;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    box-shadow: 0px -12px 3px rgba(0, 0, 0, 0.2);
-    
-    display: -webkit-inline-flex;
-    align-items: center;
-    padding: 1.25rem;
-}
-
-.about-us .flex-content{
-    flex: 1;
-}
-
-.about-us h1{
-    padding: 0.9375rem;
-    margin-top: 0.625rem;
-    text-shadow: 1.3px 1.3px 1.3px black;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-}
-
-.icons{
-    display: none;
-}
-
-
-.icons.hidden{
-    display: none;
-}
-
-.linha{
-    display: none;
-}
-
-.about-us .topico-1{
-    width: 0.625rem;
-    height: 2.375rem;
-    background-color: #6e0d25;
-    margin-left: 0.625rem;
-    margin-right: 15px;
-    border-radius: 0.625rem;
-}
-
-.text-description{
-    max-width: 90%;
-    padding: 0.125rem;
-    margin-left: 1rem;
-    font-size: 18px;
-    text-shadow: 0.5px 0.5px 0.5px black;
-}
-
-.red{
-    color: #6e0d25;
-    text-shadow: none;
-}
-
-.icons-about{
-    display: none;
-}
-
-.icons-about img{
-    display: none;
-}
-.icons-about .linha{
-    display: none;
-}
-
-.services{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.services-item img {
-    width: 40px;
-    height: 40px;
-}
-
-.services.hidden {
-    display: flex;
-    flex-direction: column;
-}
-
-.services-item{
-    width: 12.5rem;
-    height: 9.375rem;
-    padding-top: 25px;
-    margin: 0 auto;
-    border-radius: 10%;
-    
-
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-
-    margin-top: 20px;
-
-    background: rgba( 110, 13, 37, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.6 );
-    -webkit-backdrop-filter: blur( 8px );
-}
-
-.services-item img{
-    width: 60px;
-    height: 60px;
-}
-
-/* Desnecessario */
-.images{
-    display: none;
-}
-
-.container{
-     background-image: url("./background-red.jpg");
-    /* display: flex; */
-    align-items: center;
-    justify-content: space-between; 
-}
-
-.container::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    z-index: -2;
-    background-position: center;    
-}
-
-.container h1{
-    padding: 20px;
-    margin-left: 2%;
-    margin-top: 0.7%;
-    text-shadow: 1.3px 1.3px 1.3px black;
-    align-items: center;
-    font-size: 2.5rem;
-}
-
+    .droptool.active a{
+        text-decoration: none;
+        font-size: 18px;
+    }
 }
