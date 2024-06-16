@@ -12,6 +12,10 @@ html{
     font-family: 'magistral';
 }
 
+*::selection{
+    background-color: #6e0d25;
+}
+
 a:hover{
     transition: transform .5s ease;
     transition: font-weight .5s ease;
@@ -90,9 +94,35 @@ body::before{
     margin-left: 7%;
     max-width: 45%;
 }
-    
+
 .hidden{
     opacity: 0;
+}
+
+#wisearch{
+    max-width: fit-content;
+}
+
+.typewriter{
+    overflow: hidden;
+    margin: 0 auto;
+    border-right: .1em solid whitesmoke; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    animation:
+    typing 1.5s steps(20, end),
+    blink-caret .5s steps(40) infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0% }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from { border-color: whitesmoke; }
+    to { border-color: transparent }
 }
 
 .show{
