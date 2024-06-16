@@ -1,18 +1,34 @@
+/* ========== FONTS  ========== */
 @font-face {
     font-family: 'magistral';
     src: url("./fonts/Magistral-Medium.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'magistral-extra-bold';
+    src: url("./fonts/Magistral-ExtraBold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'magistral-book';
+    src: url("./fonts/Magistral-Book.ttf");
+    font-weight: lighter;
 }
 
+
+
+/* ========== GENERAL SETTINGS ========== */
 html{
     scroll-behavior: smooth;
+    font-size: 15px;
 }
 
 *{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     color: whitesmoke;
-    font-family: 'magistral';
+    box-sizing: border-box;
 }
 
 *::selection{
@@ -21,40 +37,42 @@ html{
 
 a:hover{
     transition: transform .5s ease;
-    transition: font-weight .5s ease;
+    transition:  .5s ease;
     font-weight: bold;
-    transform: scale(1.1);
-}
-
-
-
-*{
-    margin: 0;
-    padding: 0;
 }
 
 li{
     list-style: none;
 }
 
+body {
+    font-family: "magistral";
+    color: whitesmoke;
+}
 
-/* RESPONSIVIDADE */
+
+
+/* ========== RESPONSIVIDADE ========== */
 @media (max-width: 767px) {
     body {
-        font-family: 'magistral';
         background-image: url("./background-home.jpg");
-        color: white;
-        font-size: 15px;
-        background-size:800px;
+        background-size: 100vh;
         background-position-x: 80%;
         background-position-y: 0px;
         background-repeat: no-repeat;
     }
+    .section{
+        padding: 10px;
+        margin-top: 100px;
+    }
 
+
+
+    /* ========== HEADER ========== */
     .header{
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
         align-items: center;
         transition: background-color .5s ease;
     }
@@ -63,10 +81,11 @@ li{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 5rem;
         padding: 1rem;
         background-color: transparent;
     }
-
+    
     .header-scrolled{
         background-color: #6e0d25;
     }
@@ -77,32 +96,30 @@ li{
         filter: invert(1);
     }
 
-    .section{
-        padding: 10px;
-        margin-top: 100px;
-    }
-
+    /* ========== DROPDOWN MENU ========== */
     .droptool {
         display: none;
-        position: relative;
-        top: -50px;
-        transition: top 5s ease-out;
     }
 
     .droptool.active{
         display: flex;
-        position: sticky;
-        z-index: 0;
+        position: fixed;
+        width: 100%;
         text-align: center;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
         background-color: #6e0d25;
+        padding: 0 1rem 1rem 1rem;
+        animation: droptool-active .5s ease;
     }
-
     .droptool.active a{
         text-decoration: none;
-        font-size: 18px;
+        font-size: 1.3rem;
+    }
+    @keyframes droptool-active {
+        from{ opacity: 0; }
+        to { opacity: 1; }
+        
     }
 }
