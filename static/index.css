@@ -5,6 +5,29 @@
         src: url("./fonts/Magistral-Medium.ttf");
     }
 
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'magistral';
+}
+
+*::selection{
+    background-color: #6e0d25;
+}
+
+a:hover{
+    transition: transform .5s ease;
+    transition: font-weight .5s ease;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
     body {
         font-family: 'magistral';
         background-image: url("./background-home.jpg");
