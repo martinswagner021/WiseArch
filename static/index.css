@@ -1,119 +1,75 @@
-@import url('./fonts/Magistral-Medium.ttf');
+@font-face {
+    font-family: 'magistral';
+    src: url('./fonts/Magistral-Medium.ttf');
+}
 
 html{
     scroll-behavior: smooth;
 }
 
-*{
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
-    color: whitesmoke;
-    font-family: 'magistral';
-}
-
-a:hover{
-    transition: transform .5s ease;
-    transition: font-weight .5s ease;
-    font-weight: bold;
-    transform: scale(1.1);
-}
-
 body{
-    display: flex;
-    flex-direction: column;
-}
-
-body::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
     background-image: url('./background-home.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.header{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    display: grid;
-    grid-template-areas:
-        'header-left links links';
+    font-family: 'magistral';
     color: whitesmoke;
-    font-size: 1.875rem;
-    transition: background-color .5s ease;
+    font-size: 0.75rem;
 }
 
-.header-scrolled{
-    background-color: #6e0d25
-}
+/* Parte do Header */
 
-.header-left{
-    grid-area: header-left;
+.header{
+    position: relative;
+    margin: 0 auto ;
     display: flex;
-    justify-content: start;
-    align-items: center;
-    font-size: 1.25rem;
-    margin-left: 55.008px;
-}
-.header-left img{
-    width: 7.5rem;
-    height: 7.5rem;
-    filter: invert(1);
-    margin-right: 33.008px;
-}
-.header ul{
-    grid-area: links;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    max-width: 90%;
-
-}
-
-.section{
-    height: 100vh;
-    display: flex;
+    padding-top: 1.25rem;
     align-items: center;
     justify-content: space-between;
 }
 
-.content{
-    text-align: start;
-    margin-left: 7%;
-    max-width: 45%;
+.header-left{
+    display: flex;
+    align-items: center;
 }
+
+.header-left img{
+    width: 3.125rem;
+    height: 3.125rem;
+    filter: invert(1);
+    padding: 10px;
+}
+
+/* Responsavel por esconder a lista */
+
+.header ul{
+    display: none;
+}
+
+.header.active ul{
+    display: flex;
+    position: absolute;
+}
+
+
+
+#menu-mobile{
+    font-family: 'magistral';
+    color: aliceblue;
+    margin: 0 auto;
+    border-radius: 10%;
+
+    /* tamanho  */
+    width: 50px;
+    height: 50px;
     
-.hidden{
-    opacity: 0;
+    background: rgba( 110, 13, 37, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.6 );
+    -webkit-backdrop-filter: blur( 8px );
 }
 
-.show{
-    transition: opacity 1.5s ease;
-    opacity: 1;
-}
 
-.content h1{
-    font-size: 7.5rem;
-    margin-left: 15px;
-}
-
-.content p{
-    font-size: 1.563rem; 
-}
+/* Parte do about us */
 
 .about-us{
     background-image: url(./background-about-us.jpg);
-    padding-top: 120px;
-    width: 100%;
-    height: 105vh;
     z-index: -1;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px ;
@@ -121,160 +77,70 @@ body::before{
     border-bottom-right-radius: 80px;
     box-shadow: 0px -12px 3px rgba(0, 0, 0, 0.2);
 
-    display: flex;
+    display: -webkit-inline-flex;
     align-items: center;
-}
-.about-us .flex-content{
-    flex: 1;
-}
-
-.about-us h1{
-    padding: 20px;
-    margin-left: 2%;
-    margin-top: 0.7%;
-    text-shadow: 1.3px 1.3px 1.3px black;
-    display: flex;
-    align-items: center;
-    font-size: 3.125rem;
-}
-
-.icons{
-    display: flex;
-    flex-direction: column;
-    max-width: 65px;
-    margin-right: 20px;
-}
-
-.icons a{
-    display: flex;
-    flex-direction: column;
-    max-width: 65px;
-    max-height: 65px;
-    right: 20px;
-    top: 30vh;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-/*ok porque isso aqui nao ta funcionando?*/
-/*isso aqui são aqueles retangulos entre os icones do wpp e do instagram*/
-.linha{
-    width: 1.5px; 
-    height: 150px; 
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 28px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    padding: 1.25rem;
 }
 
 .about-us .topico-1{
-    width: 10px;
-    height: 65px;
+    width: 0.625rem;
+    height: 2.0625rem;
     background-color: #6e0d25;
-    margin-left: 10px;
-    margin-right: 25px;
-    border-radius: 10px;
+    margin-left: 0.625rem;
+    margin-right: 15px;
+    border-radius: 0.625rem;
 }
 
-.text-description{
-    max-width: 80%;
-    max-height: 300px;
-    padding: 20px;
-    margin-left: 6%;
-    font-size: 1.563rem;
-    text-shadow: 0.5px 0.5px 0.5px black;
-}
-
-.red{
-    color: #6e0d25;
-    text-shadow: none;
-}
-
-.icons-about{
-    display: flex;
-    flex-direction: column;
-    max-width: 65px;
-    margin-right: 20px;
-}
-
-.icons-about img{
-    max-height: 200px;
-}
-
-.icons-about .linha{
-    width: 2px; 
-    height: 230px; 
-    background-color: #6e0d25;
-    margin: 10px;
-    border-radius: 10px;
-    margin-left: 15px;
-}
-
-.services{
+.about-us h1{
+    padding: auto;
+    text-shadow: 1.3px 1.3px 1.3px black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    font-size: 1.5625rem;
+}
+
+.services-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.services.hidden {
+    display: flex;
+    flex-direction: column;
 }
 
 .services-item{
-    width: 11rem;
-    height: 11rem;
-    padding: 2rem;
-    margin: 0 3rem;
-    display: flex;
+    width: 12.5rem;
+    height: 9.375rem;
+    padding-top: 25px;
+    margin: 0 auto;
+    border-radius: 10%;
+    
+
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     text-align: center;
-    border-radius: 10%;
+
+
+    margin-top: 20px;
 
     background: rgba( 110, 13, 37, 0.8 );
     box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.6 );
     -webkit-backdrop-filter: blur( 8px );
 }
-.services-item img{
-    width: 5rem;
-}
 
-.images{
-    max-width: 200px;
-    max-height: 200px;
-    margin-right: 80px;
-}
 
-.container{
-    background-image: url("./background-red.jpg");
-    padding-top: 100px;
-    z-index: -2;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.container h1{
-    padding: 20px;
-    margin-left: 2%;
-    margin-top: 0.7%;
-    text-shadow: 1.3px 1.3px 1.3px black;
-    display: flex;
-    align-items: center;
-    font-size: 3.125rem;
-}
-.missao{
-    /* background-color: #6e0d25 */
-    width: 50%;
-    height: 100vh;
-    justify-content: start;
-    margin-left: 6%;
-}
-.valores{
-    /* background-color: #6e0d25; */
-    margin-right: 16%;
-}
+
+
+/*  tirando os icones do wpp e instagram pra melhor visuzalizacao */
 @media only screen and (max-width: 480px) {
-    html{
-        font-size: 12px;
-    }
+
+.icons.hidden{
+    display: none;
+}
+
+.icons-about{
+    display: none;
+}
 }
