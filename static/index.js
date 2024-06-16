@@ -21,3 +21,11 @@ window.addEventListener('scroll', function() {
         header.classList.remove('header-scrolled');
     }
 });
+
+const btn = document.getElementById("menu-mobile")
+
+btn.addEventListener('click', function(){
+    const droptool = document.getElementById('droptool');
+    droptool.classList.toggle('active');
+});
+
