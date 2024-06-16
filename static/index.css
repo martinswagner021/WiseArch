@@ -1,9 +1,7 @@
-@media (max-width: 767px) {
-    
-    @font-face {
-        font-family: 'magistral';
-        src: url("./fonts/Magistral-Medium.ttf");
-    }
+@font-face {
+    font-family: 'magistral';
+    src: url("./fonts/Magistral-Medium.ttf");
+}
 
 html{
     scroll-behavior: smooth;
@@ -28,6 +26,20 @@ a:hover{
     transform: scale(1.1);
 }
 
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 767px) {
     body {
         font-family: 'magistral';
         background-image: url("./background-home.jpg");
@@ -39,14 +51,10 @@ a:hover{
         background-repeat: no-repeat;
     }
 
-    *{
-        margin: 0;
-        padding: 0;
-    }
-
     .header{
         position: sticky;
         top: 0;
+        z-index: 1;
         align-items: center;
         transition: background-color .5s ease;
     }
@@ -55,7 +63,7 @@ a:hover{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 1rem;
         background-color: transparent;
     }
 
@@ -76,11 +84,21 @@ a:hover{
 
     .droptool {
         display: none;
+        position: relative;
+        top: -50px;
+        transition: top 5s ease-out;
     }
 
     .droptool.active{
-        display: block;
-        padding: 10px;
+        display: flex;
+        position: sticky;
+        z-index: 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: #6e0d25;
     }
 
     .droptool.active a{
