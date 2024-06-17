@@ -121,7 +121,7 @@ body {
     }
 
 
-    
+
     /* ========== DROPDOWN MENU ========== */
     .droptool {
         display: none;
@@ -177,16 +177,19 @@ body {
         width: 7rem;
         height: 7rem;
         -webkit-filter: invert();
+        filter: invert();
     }
     .logo-footer img{
         width: 2rem;
         height: 2rem;
         -webkit-filter: invert();
+        filter: invert();
     }
     .content-footer img{
         width: 1rem;
         height: 1rem;
         -webkit-filter: invert();
+        filter: invert();
     }
     .content-footer{
         display: flex;
