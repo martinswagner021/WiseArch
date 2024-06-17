@@ -34,6 +34,10 @@ const services_btn = document.getElementById("services_btn")
 
 const droptool = document.getElementById('droptool');
 
+const wisearch_btn = document.getElementById("wisearch_btn");
+
+const logo_btn = document.getElementById("logo_btn");
+
 btn.addEventListener('click', function(){
     droptool.classList.toggle('active');
     header.classList.add('header-scrolled');
@@ -53,5 +57,19 @@ home.addEventListener('click', function(){
 services_btn.addEventListener('click', function(){
     btn.classList.toggle('is-active');
     droptool.classList.toggle('active');
+});
+
+wisearch_btn.addEventListener('click', function(){
+    if(btn.classList.contains('is-active')){
+        btn.classList.remove('is-active');
+    }
+    droptool.classList.remove('active');
+});
+
+logo_btn.addEventListener('click', function(){
+    if(btn.classList.contains('is-active')){
+        btn.classList.remove('is-active');
+    }
+    droptool.classList.remove('active');
 });
 
