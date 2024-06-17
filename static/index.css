@@ -132,6 +132,7 @@ body {
     .droptool.active{
         display: flex;
         position: fixed;
+        top: 4.375rem;
         width: 100%;
         text-align: center;
         flex-direction: column;
@@ -214,6 +215,10 @@ body {
         justify-content: space-between;
     }
 
+    #about-us {
+        scroll-margin-top: 4.375rem;
+    }
+
     .about-us .topico-1{
         width: 0.625rem;
         height: 4.0625rem;
@@ -241,6 +246,10 @@ body {
         font-size: .7rem;
     }
 
+    #services {
+        scroll-margin-top: 4.375rem;
+    }
+
     .services-item{
         display: flex;
         background-color: #702b3c;
@@ -254,12 +263,17 @@ body {
         height: 7rem;
         width: 7rem;
 
+        text-align: center;
+    }
+
+    .services-item h3{
+        text-wrap: nowrap;
     }
 
     .services-item img{
         width: 3rem;
         height: 3rem;
-        padding: .2rem;
+        padding: 0.25rem;
     }
 
     .text-description {
