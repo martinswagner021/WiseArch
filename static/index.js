@@ -23,15 +23,26 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-
 // ========== MENU HAMBURGUER ==========
 const btn = document.getElementById("menu-mobile")
 
+const quem_somos_btn = document.getElementById("quem_somos_btn")
+
+const services_btn = document.getElementById("services_btn")
+
+const droptool = document.getElementById('droptool');
+
 btn.addEventListener('click', function(){
-    const droptool = document.getElementById('droptool');
     droptool.classList.toggle('active');
     header.classList.add('header-scrolled');
     btn.classList.toggle('is-active');
+});
+
+quem_somos_btn.addEventListener('click', function(){
+    droptool.classList.remove('active');
+});
+
+services_btn.addEventListener('click', function(){
+    droptool.classList.remove('active');
 });
 
