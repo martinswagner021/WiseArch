@@ -117,7 +117,9 @@ body {
     #logo-header{
         width: 3.125rem;
         height: 3.125rem;
-        filter: invert(1);
+        -webkit-filter: invert();
+        filter: invert();
+
     }
 
 
