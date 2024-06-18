@@ -39,6 +39,7 @@ a:hover{
     transition: transform .5s ease;
     transition:  .5s ease;
     font-weight: bold;
+    transform: scale(1.1);
 }
 
 li{
@@ -48,19 +49,303 @@ li{
 body {
     font-family: "magistral";
     color: whitesmoke;
+    background-image: url("./background-red.jpg");
+    text-align: justify;
+
 }
 
-.about-us{
-    background-image: url(./background-about-us.jpg);
-    padding-top: 120px;
-    width: 100%;
-    height: 105vh;
-    z-index: -1;
-    border-radius: 2rem;
-    box-shadow: 0px -12px 3px rgba(0, 0, 0, 0.2);
+section{
+    padding: 1rem;
+}
 
+/* highlighting */
+.red {
+    color: #6e0d25;
+}
+
+/* ========== ANIMATIONS ========== */
+.hidden{
+    opacity: 0;
+}
+.show{
+    transition: opacity 1.5s ease;
+    opacity: 1;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+    from, to { border-color: transparent; }
+    50% { border-color: #6e0d25; }
+}
+.typewriter{
+    border-right: .1em solid black;
+    padding-right: .1em;
+    overflow: hidden;
+    max-width: fit-content;
+    animation: typing 2s steps(20, end), blinkCaret .5s step-end infinite;
+}
+
+
+/* ========== HOME ========== */
+.home::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url('./background-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.home{
+    display: grid;
+    grid-template-areas: "content social";
+    align-items: center;
+    column-gap: 45%;
+    height: 80vh;
+}
+.home .content{
+    grid-area: "content";
+}
+#wisearch{
+    font-size: 5rem;
+}
+.home .icons{
+    display: flex;
+    grid-area: "social";
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+}
+.home .icons .linha{
+    width: .1rem; 
+    height: 9rem; 
+    background-color: whitesmoke;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+.home .icons img{
+    width: 4rem;
+    height: 4rem;
+}
+
+
+
+/* ========== ABOUT US ========== */
+.about-us {
+    background-image: url("./background-about-us.jpg");
+    width: 100%;
+    height: fit-content;
+    border-radius: 2rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#about-us {
+    scroll-margin-top: 4.375rem;
+}
+
+.about-us .topico-1{
+    width: 0.5rem;
+    height: 4rem;
+    background-color: #6e0d25;
+    margin-right: 1rem;
+    border-radius: 10px;
+}
+
+.about-us h1{
+    padding: 1.25rem;
+    text-shadow: 1.3px 1.3px 1.3px black;
     display: flex;
     align-items: center;
+    font-size: 2rem;
+    
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: .7rem;
+}
+
+#services {
+    scroll-margin-top: 4.375rem;
+}
+
+.services-item{
+    display: flex;
+    background-color: #6e0d25cf;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 1rem;
+    
+    height: 7rem;
+    width: 7rem;
+
+    text-align: center;
+}
+
+.services-item h3{
+    text-wrap: nowrap;
+}
+
+.services-item img{
+    width: 3rem;
+    height: 3rem;
+    padding: 0.25rem;
+}
+
+.text-description {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.text-description li{
+    margin-left: 2rem;
+    list-style: disc;
+    color: #6e0d25;
+}
+.text-description p{
+    color: whitesmoke;
+}
+
+
+
+/* ========== HEADER ========== */
+header{
+    position: sticky;
+    top: 0;
+    height: 4.38rem;
+    z-index: 2;
+    align-items: center;
+    transition: background-color .5s ease;
+}
+header a:hover{
+    transform: none;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.header-scrolled{
+    background-color: #6e0d25;
+}
+
+#logo-header{
+    width: 3.125rem;
+    height: 3.125rem;
+    -webkit-filter: invert();
+    filter: invert();
+}
+
+
+
+/* ========== DROPDOWN MENU ========== */
+.droptool {
+    display: none;
+}
+
+.droptool.active{
+    display: flex;
+    position: absolute;
+    top: 4.37rem;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6e0d25;
+    padding: 0 1rem 1rem 1rem;
+    animation: droptool-active .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.droptool.active a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+@keyframes droptool-active {
+    from{
+        opacity: 0;
+        border-radius: 0% 0% 100% 100%;
+    }
+    to {
+        opacity: 1;
+        border-radius: 0%;
+    }
+    
+}
+
+
+
+/* ========== FOOTER ========== */
+footer{
+    width: 100%;
+    background-color: #252c33;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 3rem;
+    gap: 1rem;
+}
+.logo-footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.social-medias-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.logo-footer svg{
+    width: 7rem;
+    height: 7rem;
+    -webkit-filter: invert();
+    filter: invert();
+}
+.logo-footer img{
+    width: 1.8rem;
+    height: 1.8rem;
+    -webkit-filter: invert();
+    filter: invert();
+}
+.content-footer img{
+    width: 1rem;
+    height: 1rem;
+    -webkit-filter: invert();
+    filter: invert();
+}
+.content-footer{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 
 
@@ -79,213 +364,44 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        background-image: url("./background-red.jpg");
-    }
     section{
-        padding: 10px;
-        margin-top: 100px;
-    }
-    .about-us{
-        height: fit-content;
-    }
-
-
-
-    /* ========== HEADER ========== */
-    .header{
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        align-items: center;
-        transition: background-color .5s ease;
-    }
-    
-    .header-content{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 5rem;
         padding: 1rem;
-        background-color: transparent;
-    }
-    
-    .header-scrolled{
-        background-color: #6e0d25;
-    }
-    
-    #logo-header{
-        width: 3.125rem;
-        height: 3.125rem;
-        -webkit-filter: invert();
-        filter: invert();
-
+        margin-top: 8rem;
     }
 
 
 
-    /* ========== DROPDOWN MENU ========== */
-    .droptool {
+    /* ========== HOME ========== */
+    .home::after{
         display: none;
     }
-
-    .droptool.active{
-        display: flex;
-        position: fixed;
-        top: 4.375rem;
-        width: 100%;
-        text-align: center;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #6e0d25;
-        padding: 0 1rem 1rem 1rem;
-        animation: droptool-active .5s ease;
+    .home{
+        display: inherit;
+        height: inherit;
     }
-    .droptool.active a{
-        text-decoration: none;
-        font-size: 1.3rem;
+    .home .icons{
+        display: none;
     }
-    @keyframes droptool-active {
-        from{ opacity: 0; }
-        to { opacity: 1; }
-        
+    #wisearch{
+        font-size: 3rem;
     }
+    
 
 
 
     /* ========== FOOTER ========== */
     footer{
-        width: 100%;
-        background-color: #252c33;
-        display: flex;
         flex-direction: column;
+        align-items: normal;
+
+        padding: .8rem 1.2rem;
+    }
+    
+
+
+    /* ============= ABOUT US ======== */
+    .services{
         justify-content: space-between;
-
-        padding: 1rem .8rem;
-        gap: 1rem;
-    }
-    .logo-footer{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .logo-footer .social-medias-footer{
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-    .logo-footer svg{
-        width: 7rem;
-        height: 7rem;
-        -webkit-filter: invert();
-        filter: invert();
-    }
-    .logo-footer img{
-        width: 2rem;
-        height: 2rem;
-        -webkit-filter: invert();
-        filter: invert();
-    }
-    .content-footer img{
-        width: 1rem;
-        height: 1rem;
-        -webkit-filter: invert();
-        filter: invert();
-    }
-    .content-footer{
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-    }
-
-
-
-    /* ============= About-Us ======== */
-    .about-us {
-        background-image: url("./background-about-us.jpg");
-        width: 100%;
-        height: fit-content;
-        border-radius: 2rem;
-        padding: 1.25rem;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    #about-us {
-        scroll-margin-top: 4.375rem;
-    }
-
-    .about-us .topico-1{
-        width: 0.625rem;
-        height: 4.0625rem;
-        background-color: #6e0d25;
-        margin-left: 10px;
-        margin-right: 25px;
-        border-radius: 10px;
-    }
-
-    .about-us h1{
-        padding: 1.25rem;
-        text-shadow: 1.3px 1.3px 1.3px black;
-        display: flex;
-        align-items: center;
-        font-size: 2rem;
-        
-    }
-
-    .services {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        font-size: .7rem;
-    }
-
-    #services {
-        scroll-margin-top: 4.375rem;
-    }
-
-    .services-item{
-        display: flex;
-        background-color: #702b3c;
-        border-radius: 1rem;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        padding: 1rem;
-        
-        height: 7rem;
-        width: 7rem;
-
-        text-align: center;
-    }
-
-    .services-item h3{
-        text-wrap: nowrap;
-    }
-
-    .services-item img{
-        width: 3rem;
-        height: 3rem;
-        padding: 0.25rem;
-    }
-
-    .text-description {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    .red {
-        color: #6e0d25;
     }
 
 }
